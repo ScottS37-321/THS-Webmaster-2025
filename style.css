@@ -1,77 +1,56 @@
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #f8f8f8;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #004d00;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.sidebar nav ul li {
+    margin: 20px 0;
 }
 
-.navbar a {
-    color: #ffffff;
+.sidebar nav ul li a {
+    color: white;
     text-decoration: none;
-    padding: 14px 20px;
-    transition: all 0.3s ease;
+    padding: 10px 20px;
+    display: block;
 }
 
-.navbar a:hover {
-    background-color: #003300;
-    border-radius: 5px;
+.sidebar nav ul li a:hover {
+    background-color: #575757;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+main {
+    margin-left: 200px;
     padding: 20px;
+    width: 100%;
 }
 
-.main-content {
+.hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.section {
-    width: 48%;
-    background-color: #ffffff;
-    color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-}
-
-.section img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.section h2 {
-    color: #004d00;
-}
-
-.reservation-box {
-    margin-top: 50px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: #ffffff;
-    text-align: center;
-}
-
-.reservation-box button {
+.content {
     margin-top: 20px;
 }

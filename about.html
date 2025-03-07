@@ -3,54 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Vegan/Vegetarian Restaurant</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        function checkDevice() {
-            if (window.innerWidth <= 768) {
-                document.body.classList.add('mobile');
-                document.body.classList.remove('desktop');
-            } else {
-                document.body.classList.add('desktop');
-                document.body.classList.remove('mobile');
-            }
-        }
-
-        window.addEventListener('resize', checkDevice);
-        window.addEventListener('load', checkDevice);
-    </script>
+    <title>About Us - Vegetarian Pizza Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>About Us</h1>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html" style="background-color: #004d00; border-radius: 5px;">About Us</a>
-        <a href="menu.html">Menu</a>
-        <a href="sustainability.html">Sustainability</a>
-        <a href="documentation.html">Documentation</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="container">
-        <div class="section">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section class="hero" style="background-image: url('placeholder.jpg');">
+            <h1>About Us</h1>
+        </section>
+        <section class="content">
             <h2>Our Story</h2>
-            <p>Welcome to our vegan/vegetarian restaurant! We are passionate about providing delicious and healthy
-                plant-based meals. Our journey started with a mission to promote sustainable living and healthy eating
-                habits. We believe in using fresh, locally sourced ingredients to create mouth-watering dishes that
-                nourish both the body and soul.</p>
-            <img src="our-story.jpg" alt="Our Story">
-        </div>
-
-        <div class="section">
-            <h2>Our Team</h2>
-            <p>Our dedicated team of chefs and staff are committed to delivering an exceptional dining experience. With
-                years of expertise in vegan and vegetarian cuisine, our team takes pride in crafting innovative and
-                flavorful dishes that cater to diverse tastes and preferences.</p>
-            <img src="our-team.jpg" alt="Our Team">
-        </div>
-    </div>
+            <p>Our restaurant was founded with the mission to provide delicious vegetarian and vegan pizzas to our
+                community. We believe in the importance of sustainable practices and supporting local farmers.</p>
+        </section>
+    </main>
 </body>
 
 </html>

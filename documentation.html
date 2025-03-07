@@ -3,69 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation - Vegan/Vegetarian Restaurant</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        function checkDevice() {
-            if (window.innerWidth <= 768) {
-                document.body.classList.add('mobile');
-                document.body.classList.remove('desktop');
-            } else {
-                document.body.classList.add('desktop');
-                document.body.classList.remove('mobile');
-            }
-        }
-
-        window.addEventListener('resize', checkDevice);
-        window.addEventListener('load', checkDevice);
-    </script>
+    <title>Documentation - Vegetarian Pizza Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Documentation</h1>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="menu.html">Menu</a>
-        <a href="sustainability.html">Sustainability</a>
-        <a href="documentation.html" style="background-color: #004d00; border-radius: 5px;">Documentation</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="container">
-        <div class="section">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section class="hero" style="background-image: url('placeholder.jpg');">
+            <h1>Documentation</h1>
+        </section>
+        <section class="content">
             <h2>Website Documentation</h2>
-            <p>Welcome to the documentation page of our vegan/vegetarian restaurant website. Here you will find
-                information about the features, structure, and technologies used in this website.</p>
-        </div>
-
-        <div class="section">
-            <h2>Features</h2>
-            <ul>
-                <li>Home Page: Introduction and overview of the restaurant.</li>
-                <li>About Us: Information about the restaurant's story and team.</li>
-                <li>Menu: Detailed menu with prices and descriptions of dishes.</li>
-                <li>Sustainability: Information about the restaurant's sustainable practices.</li>
-                <li>Contact: Contact form for reservations and inquiries.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Technologies Used</h2>
-            <ul>
-                <li>HTML5: Markup language for structuring the content.</li>
-                <li>CSS3: Styling language for designing the website.</li>
-                <li>JavaScript: Programming language for adding interactivity (if applicable).</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>How to Navigate</h2>
-            <p>Use the navigation bar at the top of each page to quickly access different sections of the website. Each
-                link takes you to a specific page with relevant information.</p>
-        </div>
-    </div>
+            <p>This website is designed for a vegetarian pizza restaurant. It includes information about the restaurant,
+                its menu, and contact details.</p>
+        </section>
+    </main>
 </body>
 
 </html>
