@@ -4,21 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>preview</title>
+  <title>Vegan/Vegetarian Restaurant</title>
   <link rel="stylesheet" href="style.css">
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      background-color: #ffffff;
+      background-color: #f8f8f8;
     }
 
     .navbar {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      background-color: #ffffff;
+      background-color: #2e7d32;
       position: sticky;
       top: 0;
       z-index: 999;
@@ -26,14 +26,14 @@
     }
 
     .navbar a {
-      color: #000000;
+      color: #ffffff;
       text-decoration: none;
       padding: 14px 20px;
       transition: all 0.3s ease;
     }
 
     .navbar a:hover {
-      background-color: #000000;
+      background-color: #1b5e20;
       border-radius: 5px;
     }
 
@@ -50,10 +50,10 @@
       margin-top: 50px;
     }
 
-    .info-section {
+    .section {
       width: 48%;
       background-color: #ffffff;
-      color: #fff;
+      color: #333;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -61,30 +61,15 @@
       flex-direction: column;
     }
 
-    .news-section {
-      width: 48%;
-      background-color: #ffffff;
-      color: #fff;
-      padding: 20px;
+    .section img {
+      max-width: 100%;
       border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .info-section {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .news-article {
       margin-top: 20px;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      color: #000;
+    }
+
+    .section h2 {
+      color: #2e7d32;
     }
 
     .reservation-box {
@@ -92,7 +77,7 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
+      background-color: #ffffff;
       text-align: center;
     }
 
@@ -101,8 +86,8 @@
       font-weight: bold;
       padding: 12px 24px;
       font-size: 16px;
-      color: #fff;
-      background-color: #ffffff;
+      color: #ffffff;
+      background-color: #2e7d32;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -110,56 +95,15 @@
     }
 
     .reservation-box button:hover {
-      background-color: #ffffff;
+      background-color: #1b5e20;
     }
 
     h1 {
       text-align: center;
       padding: 20px 0;
-      background-color: #ffffff;
-      color: #000000;
+      background-color: #2e7d32;
+      color: #ffffff;
       margin: 0;
-    }
-
-    .info-section img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-top: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .side-images {
-      display: flex;
-      position: sticky;
-      top: 0;
-      align-items: center;
-      margin-top: 50px;
-      right: auto;
-      left: auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .side-images h3 {
-      align-items: center;
-      color: #003366;
-    }
-
-    .side-images img {
-      max-width: 150px;
-      border-radius: 10px;
-      align-items: center;
-      margin-bottom: 20px;
-      align-self: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .side-images img:hover {
-      transform: scale(1.05);
     }
 
     @media (max-width: 1200px) {
@@ -167,38 +111,61 @@
         flex-direction: column;
       }
 
-      .info-section,
-      .news-section {
+      .section {
         width: 100%;
         margin-bottom: 20px;
-      }
-
-      .side-images {
-        position: static;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-top: 20px;
-      }
-
-      .side-images img {
-        max-width: 100px;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <h1>Blank</h1>
+  <h1>Welcome to Our Vegan/Vegetarian Restaurant</h1>
   <nav class="navbar">
-    <a href="index.html" style="background-color: #002244; border-radius: 5px; font-weight: bold;">Home</a>
-    <a href="blank2.html">blank2</a>
-    <a href="blank3.html">blank3</a>
-    <a href="blank4.html">blank4</a>
-    <a href="blank5.html">blank5</a>
-    <a href="blank6.html">blank6</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="menu.html">Menu</a>
+    <a href="sustainability.html">Sustainability</a>
+    <a href="contact.html">Contact</a>
   </nav>
-</body>
 
+  <div class="container">
+    <div class="main-content">
+      <div class="section">
+        <h2>Farm-to-Table</h2>
+        <p>Our restaurant is committed to serving fresh and locally sourced ingredients. We partner with local farms to
+          ensure the highest quality produce for our dishes.</p>
+        <img src="farm-to-table.jpg" alt="Farm-to-Table">
+      </div>
+      <div class="section">
+        <h2>Preparation Processes</h2>
+        <p>We take pride in our meticulous preparation processes. From washing and cutting vegetables to cooking with
+          care, every step is designed to bring out the best flavors.</p>
+        <img src="preparation.jpg" alt="Preparation Processes">
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="section">
+        <h2>Sustainability</h2>
+        <p>Sustainability is at the core of our mission. We use eco-friendly packaging, minimize waste, and strive to
+          reduce our carbon footprint in all aspects of our business.</p>
+        <img src="sustainability.jpg" alt="Sustainability">
+      </div>
+      <div class="section">
+        <h2>Our Menu</h2>
+        <p>Explore our diverse menu, featuring a variety of vegan and vegetarian dishes. From hearty salads to delicious
+          entrees, we have something for everyone.</p>
+        <img src="menu.jpg" alt="Menu">
+      </div>
+    </div>
+
+    <div class="reservation-box">
+      <h2>Make a Reservation</h2>
+      <p>Ready to experience our delicious vegan and vegetarian dishes? Make a reservation today!</p>
+      <button onclick="location.href='reservation.html'">Reserve Now</button>
+    </div>
+  </div>
+</body>
 
 </html>
