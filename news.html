@@ -1,30 +1,745 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News - Veggie Delight</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-dark: #0a0a0a;
+      --secondary-dark: #111111;
+      --text-color: #ffffff;
+      --accent-color: #e6c973;
+      --transition-speed: 0.3s;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--secondary-dark);
+      color: var(--text-color);
+      min-height: 100vh;
+    }
+    
+    .sidebar {
+      width: 280px;
+      background-color: var(--primary-dark);
+      height: 100vh;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 20px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 100;
+    }
+    
+    .sidebar-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .logo-container {
+      margin-bottom: 40px;
+      position: relative;
+      text-align: center;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: var(--text-color);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    
+    .logo-subtitle {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent-color);
+    }
+    
+    .logo-decoration {
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent-color);
+      margin: 15px auto;
+    }
+    
+    nav {
+      width: 100%;
+    }
+    
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+    
+    nav ul li {
+      width: 100%;
+      position: relative;
+    }
+    
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      display: block;
+      transition: all var(--transition-speed) ease;
+      position: relative;
+      text-align: center;
+    }
+    
+    nav ul li a:hover {
+      color: var(--accent-color);
+    }
+    
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 50%;
+      background-color: var(--accent-color);
+      transition: all var(--transition-speed) ease;
+      transform: translateX(-50%);
+    }
+    
+    nav ul li a:hover::after {
+      width: 50%;
+    }
+    
+    .sidebar-bottom {
+      margin-top: auto;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .social-links a {
+      color: var(--text-color);
+      font-size: 18px;
+      transition: color var(--transition-speed) ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent-color);
+    }
+    
+    .copyright {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .main-content {
+      margin-left: 280px;
+      width: calc(100vw - 280px);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+    }
+    
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: bold;
+      color: var(--text-color);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    
+    .subtitle {
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent-color);
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    
+    .decoration {
+      width: 80px;
+      height: 2px;
+      background-color: var(--accent-color);
+      margin: 0 auto 40px;
+    }
+    
+    .news-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    
+    .main-content-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .featured-news {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    }
+    
+    .featured-news:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .featured-news img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      filter: grayscale(30%);
+    }
+    
+    .news-content {
+      padding: 25px;
+    }
+    
+    .news-title {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: var(--text-color);
+    }
+    
+    .news-meta {
+      display: flex;
+      gap: 20px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    .news-excerpt {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    
+    .read-more {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: var(--primary-dark);
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all var(--transition-speed) ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+    
+    .read-more:hover {
+      background-color: #d1b568;
+      transform: translateY(-2px);
+    }
+    
+    .news-item {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+      margin-bottom: 25px;
+    }
+    
+    .news-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .news-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .news-item-content {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .news-item-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      filter: grayscale(30%);
+    }
+    
+    .news-item-text {
+      flex: 1;
+    }
+    
+    .news-item-title {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: var(--text-color);
+    }
+    
+    .sidebar-widget {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .widget-title {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: var(--accent-color);
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .widget-title::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent-color);
+      bottom: 0;
+      left: 0;
+    }
+    
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .event-item {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .event-date {
+      min-width: 60px;
+      height: 60px;
+      background-color: var(--accent-color);
+      color: var(--primary-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+    }
+    
+    .event-month {
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    
+    .event-day {
+      font-size: 22px;
+      font-weight: 700;
+    }
+    
+    .event-details {
+      flex: 1;
+    }
+    
+    .event-title {
+      margin: 0 0 5px 0;
+      font-size: 16px;
+      color: var(--text-color);
+    }
+    
+    .event-location {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .form-input {
+      padding: 12px 15px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .form-input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .form-button {
+      background-color: var(--accent-color);
+      color: var(--primary-dark);
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all var(--transition-speed) ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .form-button:hover {
+      background-color: #d1b568;
+      transform: translateY(-2px);
+    }
+    
+    .social-widget p {
+      margin-bottom: 15px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all var(--transition-speed) ease;
+    }
+    
+    .social-icon:hover {
+      background-color: var(--accent-color);
+      color: var(--primary-dark);
+    }
+    
+    footer {
+      background-color: var(--primary-dark);
+      color: var(--text-color);
+      text-align: center;
+      padding: 40px 20px;
+      margin-left: 280px;
+      width: calc(100% - 280px);
+    }
+    
+    .footer-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-section {
+      text-align: center;
+    }
+    
+    .footer-title {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+    
+    .footer-section p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 1024px) {
+      .sidebar {
+        width: 240px;
+      }
+      .main-content, footer {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px;
+      }
+      .sidebar-top {
+        margin-bottom: 20px;
+      }
+      nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      nav ul li {
+        width: auto;
+      }
+      .main-content, footer {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+      }
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+      .news-item-content {
+        flex-direction: column;
+      }
+      .news-item-image {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  </style>
 </head>
-
 <body>
     <div class="sidebar">
-        <div class="logo">Veggie Delight</div>
+      <div class="sidebar-top">
+        <div class="logo-container">
+          <div class="logo">Verde Pizza Co.</div>
+          <div class="logo-subtitle">Vegetarian Pizza</div>
+          <div class="logo-decoration"></div>
+        </div>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="news.html">News</a></li>
-            </ul>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="document.html">Documentation</a></li>
+          </ul>
         </nav>
+      </div>
+      <div class="sidebar-bottom">
+          <div class="social-links">
+              <a href="https://www.instagram.com/nationaltsa/?hl=en"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/nationalTSA/"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        <div class="copyright">
+          &copy; 2025 Verde Pizza Co. All Rights Reserved.
+        </div>
+      </div>
     </div>
-    <div class="main-content news">
-        <h1>Latest News & Events</h1>
-        <p>Stay updated with our latest events, special offers, and more.</p>
+  
+  <div class="main-content">
+    <h1 class="page-title">News & Events</h1>
+    <p class="subtitle">Stay updated with SCOTTS</p>
+    <div class="decoration"></div>
+    
+    <div class="news-grid">
+      <div class="main-content-inner">
+        <article class="featured-news">
+          <img src="/api/placeholder/800/400" alt="New Seasonal Menu Launch">
+          <div class="news-content">
+            <h2 class="news-title">Spring Seasonal Menu Launch: Farm-to-Table Inspirations</h2>
+            <div class="news-meta">
+              <span>March 5, 2025</span>
+              <span>Posted by: Chef Maria</span>
+            </div>
+            <div class="news-excerpt">
+              <p>We're excited to announce our new spring menu featuring seasonal produce from local farms. This season's highlight includes our new Springtime Harvest pizza with asparagus, peas, and mint pesto, alongside a refreshing Strawberry Arugula Salad that perfectly captures the essence of spring.</p>
+              <p>Join us this weekend for a special tasting event where you can sample our new creations and meet the local farmers who provide our ingredients. Reservations are recommended as space is limited.</p>
+            </div>
+            <a href="#" class="read-more">Read Full Article</a>
+          </div>
+        </article>
+        
+        <div class="news-item">
+          <div class="news-meta">
+            <span>February 18, 2025</span>
+            <span>Posted by: SCOTTS Team</span>
+          </div>
+          <div class="news-item-content">
+            <img src="/api/placeholder/150/150" alt="Vegetarian Cooking Class" class="news-item-image">
+            <div class="news-item-text">
+              <h3 class="news-item-title">Learn to Make Perfect Pizza at Home: Vegetarian Edition</h3>
+              <div class="news-excerpt">
+                <p>Our popular cooking workshop series continues! Join Chef Paolo for an intimate hands-on class where you'll learn the secrets to creating restaurant-quality vegetarian pizzas in your home kitchen. From perfecting your dough to balancing flavors, this workshop covers it all.</p>
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="news-item">
+          <div class="news-meta">
+            <span>February 10, 2025</span>
+            <span>Posted by: SCOTTS Team</span>
+          </div>
+          <div class="news-item-content">
+            <img src="/api/placeholder/150/150" alt="SCOTTS Expansion" class="news-item-image">
+            <div class="news-item-text">
+              <h3 class="news-item-title">SCOTTS Is Growing: New Location Coming This Summer</h3>
+              <div class="news-excerpt">
+                <p>We're thrilled to announce that SCOTTS will be opening a second location in the River District this summer! The new space will feature an expanded menu, outdoor seating, and a dedicated space for private events. Stay tuned for updates on our grand opening celebration.</p>
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="news-item">
+          <div class="news-meta">
+            <span>January 25, 2025</span>
+            <span>Posted by: SCOTTS Team</span>
+          </div>
+          <div class="news-item-content">
+            <img src="/api/placeholder/150/150" alt="Local Award" class="news-item-image">
+            <div class="news-item-text">
+              <h3 class="news-item-title">SCOTTS Voted "Best Vegetarian Restaurant" in City Food Awards</h3>
+              <div class="news-excerpt">
+                <p>We're honored to announce that SCOTTS has been voted the "Best Vegetarian Restaurant" in the annual City Food Awards! We want to thank our amazing customers for their support and our dedicated team for their commitment to creating exceptional plant-based cuisine.</p>
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <aside class="sidebar-content">
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Upcoming Events</h3>
+          <div class="event-list">
+            <div class="event-item">
+              <div class="event-date">
+                <span class="event-month">Mar</span>
+                <span class="event-day">15</span>
+              </div>
+              <div class="event-details">
+                <h4 class="event-title">Farmers Market Pop-Up</h4>
+                <p class="event-location">Downtown Farmers Market, 10am-2pm</p>
+              </div>
+            </div>
+            
+            <div class="event-item">
+              <div class="event-date">
+                <span class="event-month">Mar</span>
+                <span class="event-day">22</span>
+              </div>
+              <div class="event-details">
+                <h4 class="event-title">SCOTTS-Based Pizza Workshop</h4>
+                <p class="event-location">SCOTTS Main Location, 6pm-8pm</p>
+              </div>
+            </div>
+            
+            <div class="event-item">
+              <div class="event-date">
+                <span class="event-month">Apr</span>
+                <span class="event-day">5</span>
+              </div>
+              <div class="event-details">
+                <h4 class="event-title">Sustainable Dining Panel</h4>
+                <p class="event-location">Community Center, 7pm-9pm</p>
+              </div>
+            </div>
+            
+            <div class="event-item">
+              <div class="event-date">
+                <span class="event-month">Apr</span>
+                <span class="event-day">18</span>
+              </div>
+              <div class="event-details">
+                <h4 class="event-title">Earth Day Celebration</h4>
+                <p class="event-location">SCOTTS Patio, All Day</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Newsletter</h3>
+          <p>Subscribe to our newsletter for exclusive offers, recipes, and event invitations.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" class="form-input" required>
+            <button type="submit" class="form-button">Subscribe</button>
+          </form>
+        </div>
+        
+        <div class="sidebar-widget social-widget">
+          <h3 class="widget-title">Follow Us</h3>
+          <p>Stay connected with SCOTTS on social media for daily specials and behind-the-scenes content.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon">FB</a>
+            <a href="#" class="social-icon">IG</a>
+            <a href="#" class="social-icon">TW</a>
+            <a href="#" class="social-icon">YT</a>
+          </div>
+        </div>
+      </aside>
     </div>
+  </div>
+  
+  <footer>
+    <div class="footer-info">
+      <div class="footer-section">
+        <div class="footer-title">Hours</div>
+        <p>Mon-Thu: 11am-9pm<br>Fri-Sat: 11am-11pm<br>Sun: 12pm-8pm</p>
+      </div>
+      <div class="footer-section">
+        <div class="footer-title">Contact</div>
+        <p>123 Utah Street<br>UTAH, UT 97205<br>503-555-SCOTTS</p>
+      </div>
+      <div class="footer-section">
+        <div class="footer-title">Follow Us</div>
+        <p>Instagram | Facebook | Twitter</p>
+      </div>
+    </div>
+    <p>&copy; 2025 SCOTTS Vegetarian Pizza. All rights reserved.</p>
+  </footer>
 </body>
-
 </html>
