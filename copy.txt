@@ -26,3 +26,6 @@ Photo by Ariel Santos from Pexels: https://www.pexels.com/photo/pizza-served-in-
 
 Gluten Free Vegan Pizza
 Photo by Engin Akyurt from Pexels: https://www.pexels.com/photo/hot-and-fresh-traditional-italian-pizza-fresh-out-of-the-oven-27965491/
+
+
+https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap
