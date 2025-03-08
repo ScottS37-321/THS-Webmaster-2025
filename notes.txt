@@ -1,9 +1,0 @@
-Make sure to link Visual Studio code with the github repository so that the changes save properly.
-Also make sure to ctrl+s whenever you edit a file or create a file.
-If want to make your theme not look bad, 
-copy the code in theme_e_.json and type ctrl+shift+p and type user settings and hit enter. Then paste the code into the file and ctrl+s.
-
-When you are finished editing and want to push the update to github, click source control on the vscode sidebar and type Update DD/MM/YYYY HHMM in the message box
-examples:
-"Update 03/09/2024 1358"
-"Update 21/08/2024 0946"
