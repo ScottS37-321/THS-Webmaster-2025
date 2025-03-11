@@ -849,181 +849,181 @@
             {
                 "scope": "support.type.property-name.json",
                 "settings": {
-                    "foreground": "#00eeff" // Color for property names like "activityBar.background"
+					"foreground": "#00eeff"
                 }
             },
             {
                 "scope": "string.quoted.double.json",
                 "settings": {
-                    "foreground": "#ff33da" // Color for string values like "#00AA00"
+                    "foreground": "#ff33da" 
                 }
             },
             {
                 "scope": "punctuation.separator.key-value.json",
                 "settings": {
-                    "foreground": "#569CD6" // Color for colons and commas
+                    "foreground": "#569CD6" 
                 }
             },{
                 "scope": "support.variable",
                 "settings": {
-                    "foreground": "#00fffb" // Color for colons and commas
+                    "foreground": "#00fffb" 
                 }
             },
             {
                 "scope": "comment",
                 "settings": {
-                    "foreground": "#999999" // colour for comments
+                    "foreground": "#999999" 
                 }
             },
             {
                 "scope": "variable",
                 "settings": {
-                    "foreground": "#00fffb" // Variable Names
+                    "foreground": "#00fffb" 
                 }
             },
             {
                 "scope": "variable.other",
                 "settings": {
-                    "foreground": "#47f7fe" // Variable Definitions
+                    "foreground": "#47f7fe" 
                 }
             },
             {
                 "scope": "support.function",
                 "settings": {
-                    "foreground": "#e588f2" // Function References
+                    "foreground": "#e588f2" 
                 }
             },
             {
                 "scope": "entity.name.function",
                 "settings": {
-                    "foreground": "#88f28f" // Function Definitions
+                    "foreground": "#88f28f" 
                 }
             },
             {
                 "scope": "keyword",
                 "settings": {
-                    "foreground": "#11ff0f" // Keywords
+                    "foreground": "#11ff0f" 
                 }
             },
             {
                 "scope": "entity.name.tag",
                 "settings": {
-                    "foreground": "#73ff00" // Tag Names
+                    "foreground": "#73ff00" 
                 }
             },
             {
                 "scope": "support.type",
                 "settings": {
-                    "foreground": "#ff00ae" // Type Names
+                    "foreground": "#ff00ae" 
                 }
             },
             {
                 "scope": "entity.name.class",
                 "settings": {
-                    "foreground": "#ff00f7" // Class Names
+                    "foreground": "#ff00f7" 
                 }
             },
             {
                 "scope": "entity.other.attribute-name",
                 "settings": {
-                    "foreground": "#0088ff" // Attribute Names
+                    "foreground": "#0088ff" 
                 }
             },
             {
                 "scope": "storage.type",
                 "settings": {
-                    "foreground": "#57ABFF" // Atomic Keywords
+                    "foreground": "#57ABFF" 
                 }
             },
             {
                 "scope": "comment",
                 "settings": {
-                    "foreground": "#999999" // Comments
+                    "foreground": "#999999" 
                 }
             },
             {
                 "scope": "string",
                 "settings": {
-                    "foreground": "#00eeff" // Strings
+                    "foreground": "#00eeff" 
                 }
             },
             {
                 "scope": "constant.numeric",
                 "settings": {
-                    "foreground": "#f133da" // Numbers
+                    "foreground": "#f133da" 
                 }
             },
             {
                 "scope": "constant.language.boolean",
                 "settings": {
-                    "foreground": "#82D9FF" // Booleans
+                    "foreground": "#82D9FF" 
                 }
             },
             {
                 "scope": "string.regexp",
                 "settings": {
-                    "foreground": "#FF79CF" // Regular Expressions
+                    "foreground": "#FF79CF" 
                 }
             },
             {
                 "scope": "keyword.operator",
                 "settings": {
-                    "foreground": "#82D9FF" // Operators
+                    "foreground": "#82D9FF" 
                 }
             },
             {
                 "scope": "punctuation.definition.array",
                 "settings": {
-                    "foreground": "#f5f9fc" // Square Brackets
+                    "foreground": "#f5f9fc" 
                 }
             },
             {
                 "scope": "punctuation.definition.tag",
                 "settings": {
-                    "foreground": "#cbcbcb" // Angle Brackets
+                    "foreground": "#cbcbcb" 
                 }
             },
 
             {
-                "scope": "entity.name.tag.css", // CSS selectors (class names, tags, etc.)
+                "scope": "entity.name.tag.css", 
                 "settings": {
-                    "foreground": "#73FF00" // Custom color for selectors
+                    "foreground": "#73FF00" 
                 }
             },
             {
-                "scope": "support.type.property-name.css", // CSS property names (like 'color', 'margin')
+                "scope": "support.type.property-name.css", 
                 "settings": {
-                    "foreground": "#eebbff" // Custom color for property names
+                    "foreground": "#eebbff" 
                 }
             },
             {
-                "scope": "meta.property-value.css", // CSS property values (like 'red', '#fff')
+                "scope": "meta.property-value.css", 
                 "settings": {
-                    "foreground": "#f133da" // Custom color for property values
+                    "foreground": "#f133da" 
                 }
             },
             {
-                "scope": "string.quoted.double.css", // Double-quoted strings in CSS (font family names, URLs)
+                "scope": "string.quoted.double.css", 
                 "settings": {
-                    "foreground": "#00eeff" // Custom color for strings
+                    "foreground": "#00eeff" 
                 }
             },
             {
-                "scope": "string.quoted.single.css", // Single-quoted strings in CSS
+                "scope": "string.quoted.single.css", 
                 "settings": {
-                    "foreground": "#00eeff" // Custom color for single-quoted strings
+                    "foreground": "#00eeff" 
                 }
             },
             {
-                "scope": "comment.block.css", // CSS block comments
+                "scope": "comment.block.css", 
                 "settings": {
-                    "foreground": "#999999" // Custom color for comments
+                    "foreground": "#999999" 
                 }
             },
             {
-                "scope": "entity.other.attribute-name.pseudo-class.css", // Pseudo-classes (:hover, :before)
+                "scope": "entity.other.attribute-name.pseudo-class.css", 
                 "settings": {
-                    "foreground": "#ff00f7" // Custom color for pseudo-classes
+                    "foreground": "#ff00f7" 
                 }
             },
             {
