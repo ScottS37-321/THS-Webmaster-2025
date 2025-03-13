@@ -999,7 +999,7 @@
             {
                 "scope": "meta.property-value.css", 
                 "settings": {
-                    "foreground": "#f133da" 
+                    "foreground": "#ffffff" 
                 }
             },
             {
@@ -1038,6 +1038,73 @@
                     "foreground": "#ffffff"
                 }
             },
+			{
+				"scope": [
+					"string",
+					"meta.embedded.assembly"
+				],
+				"settings": {
+					"foreground": "#ff00f7"
+				}
+			},
+			{
+				"scope": "string.tag",
+				"settings": {
+					"foreground": "#ff00f7"
+				}
+			},
+			{
+				"scope": "string.value",
+				"settings": {
+					"foreground": "#ff00f7"
+				}
+			},
+			{
+				"scope": "markup.deleted",
+				"settings": {
+					"foreground": "#eebbff"
+				}
+			},
+			{
+				"scope": "markup.inline.raw",
+				"settings": {
+					"foreground": "#eebbff"
+				}
+			},
+			{
+				"scope": "meta.preprocessor.string",
+				"settings": {
+					"foreground": "#eebbff"
+				}
+			},
+			{
+				"scope": [
+					"support.constant.property-value",
+					"support.constant.font-name",
+					"support.constant.media-type",
+					"support.constant.media",
+					"constant.other.color.rgb-value",
+					"constant.other.rgb-value",
+					"support.constant.color"
+				],
+				"settings": {
+					"foreground": "#00eeff"
+				}
+			},
+			{
+				"scope": [
+					"punctuation.definition.group.regexp",
+					"punctuation.definition.group.assertion.regexp",
+					"punctuation.definition.character-class.regexp",
+					"punctuation.character.set.begin.regexp",
+					"punctuation.character.set.end.regexp",
+					"keyword.operator.negation.regexp",
+					"support.other.parenthesis.regexp"
+				],
+				"settings": {
+					"foreground": "#eebbff"
+				}
+			},
             {
                 "scope":"source.css",
                 "settings": {
